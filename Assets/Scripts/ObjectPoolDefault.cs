@@ -25,7 +25,10 @@ public class ObjectPoolDefault : MonoBehaviour
             objectPool.Add(obj);
         }
     }
-
+    public void AddObjectToPool(GameObject obj)
+    {
+        objectPool.Add(obj);
+    }
     public GameObject GetObjectFromPool()
     {
         foreach (GameObject obj in objectPool)
@@ -44,10 +47,5 @@ public class ObjectPoolDefault : MonoBehaviour
         newObj.transform.SetParent(parent.transform);
         objectPool.Add(newObj);
         return newObj;
-    }
-
-    public void ReturnObjectToPool(GameObject obj)
-    {
-        obj.SetActive(false);
     }
 }
