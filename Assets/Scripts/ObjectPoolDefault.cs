@@ -48,4 +48,9 @@ public class ObjectPoolDefault : MonoBehaviour
         objectPool.Add(newObj);
         return newObj;
     }
+
+    public void ReturnObjectToPool(GameObject obj)
+    {
+        obj.SetActive(false);
+    }
 }
