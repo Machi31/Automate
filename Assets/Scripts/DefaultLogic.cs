@@ -53,7 +53,7 @@ public class DefaultLogic : MonoBehaviour
                 newBallLogic.id = id + 1;
 
                 // Уничтожаем текущий шар
-                Destroy(gameObject);
+                poolManager.
 
                 // Заменяем два последних символа исходной строки на точку
                 string modifiedText = originalText.Remove(originalText.Length - 2).Insert(originalText.Length - 2, ".");
