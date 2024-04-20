@@ -15,18 +15,12 @@ public class DefaultLogic : MonoBehaviour
     // Поле для хранения позиции спавна
     public GameObject spawnPos;
 
-    private string originalText; // Храним исходную строку
-
-    // Use this for initialization
-    void Start()
-    {
-        originalText = "HelloWorld"; // Исходная строка
+    private void Start() {
+        SpawnerDefault.GameObjectID += SetId;
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        // Здесь можно добавить логику для обновления текста
+    private void SetId(int id) {
+        this.id = id;
     }
 
     public void OnCollisionEnter(Collision collision)
@@ -42,9 +36,6 @@ public class DefaultLogic : MonoBehaviour
                 // Получаем позицию столкновения
                 Vector3 collisionPoint = collision.contacts[0].point;
 
-                // Используем позицию спавна из spawnPos
-                Vector3 spawnPosition = spawnPos.transform.position;
-
                 // Создаем новый объект из префаба на месте столкновения, немного выше
                 GameObject replacementObject = Instantiate(biggerReplacementPrefab, collisionPoint + Vector3.up, Quaternion.identity);
 
@@ -53,16 +44,12 @@ public class DefaultLogic : MonoBehaviour
                 newBallLogic.id = id + 1;
 
                 // Уничтожаем текущий шар
-                poolManager.
-
-                // Заменяем два последних символа исходной строки на точку
-                string modifiedText = originalText.Remove(originalText.Length - 2).Insert(originalText.Length - 2, ".");
-                Debug.Log(modifiedText); // Выводим модифицированный текст в консоль
+                poolManager.ReturnObjectToPool(gameObject);
             }
             else
             {
                 // Если ID текущего шара больше или равен ID другого шара, то удаляем другой шар
-                Destroy(collision.gameObject);
+                poolManager.ReturnObjectToPool(gameObject);
             }
         }
     }

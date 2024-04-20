@@ -150,3 +150,5 @@ MonoBehaviour:
   id: 0
   collId: 0
   replacementPrefab: {fileID: 6685556807684053006, guid: f6d3fafbb0e7d4b439eed186bbc7593e, type: 3}
+  biggerReplacementPrefab: {fileID: 6685556807684053006, guid: f6d3fafbb0e7d4b439eed186bbc7593e, type: 3}
+  spawnPos: {fileID: 0}
