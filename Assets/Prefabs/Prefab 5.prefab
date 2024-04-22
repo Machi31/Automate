@@ -16,7 +16,7 @@ GameObject:
   - component: {fileID: 8827777383391577525}
   m_Layer: 0
   m_Name: Prefab 5
-  m_TagString: Untagged
+  m_TagString: Ball
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -146,9 +146,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a5a36db10eae07a4bb72c967ddc9d3cf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  poolManager: {fileID: 0}
+  poolManager: []
   id: 0
-  collId: 0
+  collId: 5
   replacementPrefab: {fileID: 6685556807684053006}
-  biggerReplacementPrefab: {fileID: 0}
+  biggerReplacementPrefab: {fileID: 6685556807684053006, guid: 69e891895a7f5ad46811eff20fbc5334, type: 3}
   spawnPos: {fileID: 0}

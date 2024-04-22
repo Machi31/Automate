@@ -3,10 +3,8 @@ using UnityEngine;
 
 public class SpawnerDefault : MonoBehaviour
 {
-    public static event Action<int> GameObjectID;
-
-    public ObjectPoolDefault poolManager; // менеджер объектов пула
-    public GameObject replacementPrefab; // префаб объекта, который будет создаваться
+    public ObjectPoolDefault[] poolManager; // менеджер объектов пула
+    public Transform spawnPos;
     private int _id;
 
     private void Update()
@@ -14,9 +12,10 @@ public class SpawnerDefault : MonoBehaviour
         if (Input.GetMouseButtonDown(0))
         {
             // Получаем объект из пула
-            GameObject obj = poolManager.GetObjectFromPool();
+            GameObject obj = poolManager[0].GetObjectFromPool(spawnPos);
             _id++;
-            GameObjectID?.Invoke(_id);
+            DefaultLogic defaultLogic = obj.GetComponent<DefaultLogic>();
+            defaultLogic.id = _id;
         }
     }
 }
