@@ -388,7 +388,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b08176e28f4820c4abb26d34cda6fa56, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  pool: {fileID: 162563908}
+  pool:
+  - {fileID: 1714707685}
+  - {fileID: 1807346594}
+  - {fileID: 515654744}
+  - {fileID: 322657254}
+  - {fileID: 1851080999}
+  - {fileID: 1289172223}
+  - {fileID: 162563908}
   prefab: {fileID: 6685556807684053006, guid: 69e891895a7f5ad46811eff20fbc5334, type: 3}
   spawnPos: {fileID: 1776643645}
   parent: {fileID: 322436692}
@@ -540,7 +547,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b08176e28f4820c4abb26d34cda6fa56, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  pool: {fileID: 322657254}
+  pool:
+  - {fileID: 1714707685}
+  - {fileID: 1807346594}
+  - {fileID: 515654744}
+  - {fileID: 322657254}
+  - {fileID: 1851080999}
+  - {fileID: 1289172223}
+  - {fileID: 162563908}
   prefab: {fileID: 6685556807684053006, guid: 9c709a03a2d84d54f9136712ebcd0dc1, type: 3}
   spawnPos: {fileID: 1776643645}
   parent: {fileID: 1923812111}
@@ -661,7 +675,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b08176e28f4820c4abb26d34cda6fa56, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  pool: {fileID: 515654744}
+  pool:
+  - {fileID: 1714707685}
+  - {fileID: 1807346594}
+  - {fileID: 515654744}
+  - {fileID: 322657254}
+  - {fileID: 1851080999}
+  - {fileID: 1289172223}
+  - {fileID: 162563908}
   prefab: {fileID: 6685556807684053006, guid: dd8cfb20fab30fd44b19fe4af3a60539, type: 3}
   spawnPos: {fileID: 1776643645}
   parent: {fileID: 1589812816}
@@ -1442,7 +1463,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b08176e28f4820c4abb26d34cda6fa56, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  pool: {fileID: 1289172223}
+  pool:
+  - {fileID: 1714707685}
+  - {fileID: 1807346594}
+  - {fileID: 515654744}
+  - {fileID: 322657254}
+  - {fileID: 1851080999}
+  - {fileID: 1289172223}
+  - {fileID: 162563908}
   prefab: {fileID: 6685556807684053006, guid: 8daadfc40860ef14a8ecd56459af12ec, type: 3}
   spawnPos: {fileID: 1776643645}
   parent: {fileID: 1268575986}
@@ -1682,7 +1710,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b08176e28f4820c4abb26d34cda6fa56, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  pool: {fileID: 1714707685}
+  pool:
+  - {fileID: 1714707685}
+  - {fileID: 1807346594}
+  - {fileID: 515654744}
+  - {fileID: 322657254}
+  - {fileID: 1851080999}
+  - {fileID: 1289172223}
+  - {fileID: 162563908}
   prefab: {fileID: 6685556807684053006, guid: 028f58059986ecf468ee7772e1ffcc90, type: 3}
   spawnPos: {fileID: 1776643645}
   parent: {fileID: 2143176517}
@@ -1746,8 +1781,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 42f4547af96b37e4c9664c5055e51668, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  poolManager: {fileID: 1714707685}
-  replacementPrefab: {fileID: 0}
+  poolManager:
+  - {fileID: 1714707685}
+  - {fileID: 1807346594}
+  - {fileID: 515654744}
+  - {fileID: 322657254}
+  - {fileID: 1851080999}
+  - {fileID: 1289172223}
+  - {fileID: 162563908}
+  spawnPos: {fileID: 1776643646}
 --- !u!1 &1807346592
 GameObject:
   m_ObjectHideFlags: 0
@@ -1792,7 +1834,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b08176e28f4820c4abb26d34cda6fa56, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  pool: {fileID: 1807346594}
+  pool:
+  - {fileID: 1714707685}
+  - {fileID: 1807346594}
+  - {fileID: 515654744}
+  - {fileID: 322657254}
+  - {fileID: 1851080999}
+  - {fileID: 1289172223}
+  - {fileID: 162563908}
   prefab: {fileID: 6685556807684053006, guid: f6d3fafbb0e7d4b439eed186bbc7593e, type: 3}
   spawnPos: {fileID: 1776643645}
   parent: {fileID: 1921323012}
@@ -1841,7 +1890,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b08176e28f4820c4abb26d34cda6fa56, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  pool: {fileID: 1851080999}
+  pool:
+  - {fileID: 1714707685}
+  - {fileID: 1807346594}
+  - {fileID: 515654744}
+  - {fileID: 322657254}
+  - {fileID: 1851080999}
+  - {fileID: 1289172223}
+  - {fileID: 162563908}
   prefab: {fileID: 6685556807684053006, guid: f6372fb9ff6e6a84b9d206767f1ccf78, type: 3}
   spawnPos: {fileID: 1776643645}
   parent: {fileID: 1910049556}
