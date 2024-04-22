@@ -36,7 +36,9 @@ public class DefaultLogic : MonoBehaviour
                 // Получаем позицию столкновения
                 Vector3 collisionPoint = collision.contacts[0].point;
 
-                // Создаем новый объект из префаба на месте столкновения, немного выше
+                //TODO Создаем новый объект из префаба на месте столкновения, немного выше
+                //! GetObjectFromPool();
+                //? вместо Instantiate
                 GameObject replacementObject = Instantiate(biggerReplacementPrefab, collisionPoint + Vector3.up, Quaternion.identity);
 
                 // Устанавливаем новый ID для нового шара
