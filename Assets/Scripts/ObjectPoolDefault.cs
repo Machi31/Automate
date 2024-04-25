@@ -3,7 +3,7 @@ using UnityEngine;
 
 public class ObjectPoolDefault : MonoBehaviour
 {
-    public ObjectPoolDefault pool; // пул объектов
+    public ObjectPoolDefault[] pool; // пул объектов
 
     public GameObject prefab; // префаб объекта для пула
     public GameObject spawnPos; // позиция спавна
@@ -25,26 +25,29 @@ public class ObjectPoolDefault : MonoBehaviour
             objectPool.Add(obj);
         }
     }
-    public void AddObjectToPool(GameObject obj)
-    {
-        objectPool.Add(obj);
-    }
-    public GameObject GetObjectFromPool()
+    /* public void AddObjectToPool(GameObject obj)
+    * {
+    *     objectPool.Add(obj);
+    * }
+    */
+    public GameObject GetObjectFromPool(Transform spawnPos)
     {
         foreach (GameObject obj in objectPool)
         {
             if (!obj.activeInHierarchy)
             {
-                obj.transform.position = spawnPos.transform.position;
                 obj.SetActive(true);
+                obj.transform.position = spawnPos.transform.position;
                 return obj;
             }
         }
 
         // если все объекты из пула активны, создаём новый и добавляем в пул
         GameObject newObj = Instantiate(prefab);
+        DefaultLogic create = newObj.GetComponent<DefaultLogic>();
         newObj.transform.position = spawnPos.transform.position;
         newObj.transform.SetParent(parent.transform);
+        create.poolManager = pool;
         objectPool.Add(newObj);
         return newObj;
     }

@@ -146,9 +146,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a5a36db10eae07a4bb72c967ddc9d3cf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  poolManager: {fileID: 0}
+  poolManager: []
   id: 0
   collId: 0
-  replacementPrefab: {fileID: 6685556807684053006, guid: f6d3fafbb0e7d4b439eed186bbc7593e, type: 3}
+  replacementPrefab: {fileID: 6685556807684053006}
   biggerReplacementPrefab: {fileID: 6685556807684053006, guid: f6d3fafbb0e7d4b439eed186bbc7593e, type: 3}
   spawnPos: {fileID: 0}
