@@ -1,43 +1,32 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
-public class ManipulatorMove : MonoBehaviour
+public class ObjectMovement : MonoBehaviour
 {
-    public CameraSwitcher cameraSwitcher;
-
-    public Transform[] lastPositions;
-
-    public float speed = 5.0f; // �������� �����������
+    public Camera camera; // Камера
+    public float speed = 5.0f; // Скорость перемещения объекта
+    public float minX = -10.0f; // Минимальное значение X
+    public float maxX = 10.0f; // Максимальное значение X
+    public float minZ = -10.0f; // Минимальное значение Z
+    public float maxZ = 10.0f; // Максимальное значение Z
 
     void Update()
     {
-        float posX = transform.position.x;
-        float posZ = transform.position.z;
-        switch (cameraSwitcher.i)
-        {
-            case 0:
-            case 1:
-                float horizontal = Input.GetAxis("Horizontal"); // обработка горизонтального ввода
-                float vertical = Input.GetAxis("Vertical"); // обработка вертикального ввода
+        float horizontal = Input.GetAxis("Horizontal"); // Обработка горизонтального ввода
+        float vertical = Input.GetAxis("Vertical"); // Обработка вертикального ввода
 
-                // перемещение манипулятора по осям x и z
-                if ((horizontal < 0 && posX > -lastPositions[0].position.x) || (horizontal > 0 && posX < lastPositions[0].position.x))
-                    transform.Translate(horizontal * speed * Time.deltaTime, 0, 0); // перемещение по x
-                if ((vertical < 0 && posZ > -lastPositions[1].position.z) || (vertical > 0 && posZ < lastPositions[1].position.z))
-                    transform.Translate(0, 0, vertical * speed * Time.deltaTime); // перемещение по z
+        // Преобразование ввода в пространство камеры
+        Vector3 inputDirection = new (horizontal, 0, vertical);
+        Vector3 movementDirection = camera.transform.TransformDirection(inputDirection);
+        movementDirection.y = 0; // Убрать движение по Y
 
-                break;
-            default:
-                horizontal = Input.GetAxis("Horizontal"); // обработка горизонтального ввода
-                vertical = Input.GetAxis("Vertical"); // обработка вертикального ввода
+        // Вычисление нового положения
+        float newX = transform.position.x + movementDirection.x * speed * Time.deltaTime;
+        newX = Mathf.Clamp(newX, minX, maxX); // Ограничение по X
+        transform.position = new (newX, transform.position.y, transform.position.z);
 
-                // перемещение манипулятора по осям x и z
-                if ((horizontal < 0 && -posX > -lastPositions[0].position.x) || (horizontal > 0 && -posX < lastPositions[0].position.x))
-                    transform.Translate(-horizontal * speed * Time.deltaTime, 0, 0); // перемещение по x
-                if ((vertical < 0 && -posZ > -lastPositions[1].position.z) || (vertical > 0 && -posZ < lastPositions[1].position.z))
-                    transform.Translate(0, 0, -vertical * speed * Time.deltaTime); // перемещение по z
-                break;
-        }
+        // Вычисление нового положения Z
+        float newZ = transform.position.z + movementDirection.z * speed * Time.deltaTime;
+        newZ = Mathf.Clamp(newZ, minZ, maxZ); // Ограничение по Z
+        transform.position = new (transform.position.x, transform.position.y, newZ);
     }
 }

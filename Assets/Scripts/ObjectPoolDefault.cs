@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using UnityEditor;
 using UnityEngine;
 
 public class ObjectPoolDefault : MonoBehaviour
@@ -38,6 +39,7 @@ public class ObjectPoolDefault : MonoBehaviour
             {
                 obj.SetActive(true);
                 obj.transform.position = spawnPos.transform.position;
+                obj.GetComponent<Rigidbody>().isKinematic = false;
                 return obj;
             }
         }
@@ -47,6 +49,7 @@ public class ObjectPoolDefault : MonoBehaviour
         DefaultLogic create = newObj.GetComponent<DefaultLogic>();
         newObj.transform.position = spawnPos.transform.position;
         newObj.transform.SetParent(parent.transform);
+        newObj.GetComponent<Rigidbody>().isKinematic = false;
         create.poolManager = pool;
         objectPool.Add(newObj);
         return newObj;
